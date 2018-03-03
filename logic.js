@@ -8,4 +8,4 @@ moveFunc = () => {
 
 };
 
-export {startFunc, moveFunc};
+// export {startFunc, moveFunc};
