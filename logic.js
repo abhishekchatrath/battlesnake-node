@@ -4,18 +4,18 @@ let game_id = 0;
 let width = 0;
 let height = 0;
 
-startFunc = () => {
+const startFunc = () => {
     
 };
 
-moveFunc = () => {
+const moveFunc = () => {
 
 };
 
-setupGame = (game_id, width, height) => {
+const setupGame = (game_id, width, height) => {
     game_id = game_id;
     width = width;
     height = height;
 };
 
-export {startFunc, moveFunc, setupGame};
+module.exports = {startFunc, moveFunc, setupGame};
