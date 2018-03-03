@@ -9,7 +9,11 @@ const {
   poweredByHandler
 } = require('./handlers.js')
 
-// const { startFunc, moveFunc } = require("./logic.js")
+const {
+  startFunc,
+  moveFunc,
+  setupGame
+} = require("./logic.js")
 
 // For deployment to Heroku, the port needs to be set using ENV, so
 // we check for the port number in process.env
@@ -27,15 +31,16 @@ app.use(poweredByHandler)
 app.post('/start', (request, response) => {
   // NOTE: Do something here to start the game
 
-  print(request) 
-
   //use logic here
+  setupGame(request.body.game_id, request.body.width, request.body.height);
 
   // Response data
   const data = {
     color: '#DFFF00',
     head_url: 'http://www.placecage.com/c/200/200', // optional, but encouraged!
     taunt: "Sassy mama!!!!!!!", // optional, but encouraged!
+    head_type: "pixel",
+    tail_type: "pixel"
   }
 
   return response.json(data)
