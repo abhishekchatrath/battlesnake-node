@@ -1,7 +1,11 @@
 //there is nothing here right now
 
-startFunc = () => {
+startFunc = (x) => {
     
 };
 
-export {startFunc};
+moveFunc = () => {
+
+};
+
+export {startFunc, moveFunc};

@@ -9,7 +9,7 @@ const {
   poweredByHandler
 } = require('./handlers.js')
 
-const { startFunc } = require("./logic.js")
+const { startFunc, moveFunc } = require("./logic.js")
 
 // For deployment to Heroku, the port needs to be set using ENV, so
 // we check for the port number in process.env
