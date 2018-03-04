@@ -25,6 +25,7 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(poweredByHandler)
 
+
 // --- SNAKE LOGIC GOES BELOW THIS LINE ---
 
 // Handle POST request to '/start'
@@ -46,11 +47,17 @@ app.post('/start', (request, response) => {
   return response.json(data)
 })
 
+
 // Handle POST request to '/move'
 app.post('/move', (request, response) => {
   // NOTE: Do something here to generate your move
 
   //use logic here
+  const food = request.body.food;
+  const snakes = request.body.snakes;
+  const mySnake = request.body.you;
+
+  moveFunc(food.data, snakes.data, mySnake.body.data)
 
   // Response data
   const data = {
@@ -62,6 +69,7 @@ app.post('/move', (request, response) => {
 })
 
 // --- SNAKE LOGIC GOES ABOVE THIS LINE ---
+
 
 app.use('*', fallbackHandler)
 app.use(notFoundHandler)
